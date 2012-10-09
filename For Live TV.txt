@@ -1,0 +1,25 @@
+Given opened "http://go.test.sp.bskyb.com/vod/page/default/home.do" page
+    When I click "Sign in" link
+    Then I should see "Sign in" page
+    When I login
+   # When I select "No Sky TV, Broadband or Talk" option
+    When I click "On Demand" link
+    Then I should see "Showcase" page
+    When I click "Entertainment" link
+    Then I should see "TV when you want it" page
+    When I click "RegressionPack Series List Row" link
+    Then I should see "Live TV page - Live TV Page" on the page
+
+
+
+
+
+
+
+
+
+ # check image
+      page.should have_selector(:xpath, "//div[@class='promoItem odd']//img[contains(@src,'SRILANKvPAK_SML.jpg')]")
+      # check link
+      page.should have_selector(:xpath, "//div[@class='promoItem odd']//a[contains(@href, 'videoId/b4dd7104015b9310VgnVCM100000a2b6140a________')]")
+
